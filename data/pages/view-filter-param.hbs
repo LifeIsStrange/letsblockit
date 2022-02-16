@@ -21,6 +21,11 @@
         <label class="form-label" for="{{name}}">
             {{description}}:
             {{>view-filter-pill-new name}}
+            {{#if sort}}
+                <button type="submit" name="__sort" value="{{name}}" class="btn me-2">
+                    <i class="ti ti-sort-ascending-letters"></i>
+                </button>
+            {{/if}}
         </label>
         <textarea class="form-control" id="{{name}}" name="{{name}}" spellcheck="false" rows="10">
             {{~lookup @root.data.params name}}</textarea>
@@ -30,6 +35,11 @@
         <legend class="col-form-label col-sm-auto pt-0">
             {{description}}:
             {{>view-filter-pill-new name}}
+            {{#if sort}}
+                <button type="submit" name="__sort" value="{{name}}" class="btn me-2">
+                    <i class="ti ti-sort-ascending-letters"></i>
+                </button>
+            {{/if}}
         </legend>
         <div class="col-lg-9">
             {{#each (lookup_list @root.data.params name)}}

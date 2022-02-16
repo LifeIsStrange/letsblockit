@@ -3,6 +3,7 @@ params:
   - name: creators
     description: Creators to filter out
     type: list
+    sort: natural
     default: [ "reneritchie", "apple-talk" ]
 tags:
   - nebula

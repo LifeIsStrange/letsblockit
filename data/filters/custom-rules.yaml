@@ -3,6 +3,7 @@ params:
   - name: rules
     description: Custom rules
     type: multiline
+    sort: domain-rules
     default: |
       !! cosmetic filters work, prefixed by the target website
       reddit.com###redesign-beta-optin-btn

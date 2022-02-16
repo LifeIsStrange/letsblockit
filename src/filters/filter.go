@@ -42,12 +42,13 @@ type FilterAndTests struct {
 }
 
 type FilterParam struct {
-	Name        string      `validate:"required"`
-	Description string      `validate:"required"`
-	Type        ParamType   `validate:"required,oneof=checkbox string list multiline"`
-	OnlyIf      string      `validate:"omitempty,valid_only_if" yaml:",omitempty"`
-	Default     interface{} `validate:"valid_default"`
-	Presets     []Preset    `validate:"omitempty,preset_allowed,dive" yaml:",omitempty"`
+	Name        string        `validate:"required"`
+	Description string        `validate:"required"`
+	Type        ParamType     `validate:"required,oneof=checkbox string list multiline"`
+	OnlyIf      string        `validate:"omitempty,valid_only_if" yaml:",omitempty"`
+	Default     interface{}   `validate:"valid_default"`
+	Sort        ParamSortType `validate:"omitempty,oneof=natural domain domain-rules"`
+	Presets     []Preset      `validate:"omitempty,preset_allowed,dive" yaml:",omitempty"`
 }
 
 type ParamType string
@@ -57,6 +58,14 @@ const (
 	StringParam     ParamType = "string"
 	StringListParam ParamType = "list"
 	MultiLineParam  ParamType = "multiline"
+)
+
+type ParamSortType string
+
+const (
+	NaturalSliceSort ParamSortType = "natural"
+	DomainSliceSort  ParamSortType = "domain"
+	DomainRuleSort   ParamSortType = "domain-rules"
 )
 
 type testCase struct {

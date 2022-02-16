@@ -24,11 +24,13 @@ params:
     description: SearX instances
     type: list
     onlyif: searx-enable
+    sort: domain
     default:
       - searx.thegpm.org
   - name: sites
     description: Sites to hide
     type: list
+    sort: domain
     default:
       - .pinterest.
     presets:

@@ -3,6 +3,7 @@ params:
   - name: sites
     description: Sites to hide
     type: list
+    sort: domain
     default: [ "www.linkedin.com/learning", "my.previous.corp/careers", "pushy-vendor.com" ]
 tags:
   - linkedin
