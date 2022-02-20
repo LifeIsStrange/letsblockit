@@ -173,6 +173,7 @@ func (s *Server) setupRouter() {
 	withAuth.GET("/", s.landingPageHandler).Name = "landing"
 	withAuth.GET("/help", s.helpPages).Name = "help-main"
 	withAuth.GET("/help/:page", s.helpPages).Name = "help"
+	withAuth.GET("/news", s.changesHandler).Name = "news"
 
 	withAuth.GET("/filters", s.listFilters).Name = "list-filters"
 	withAuth.GET("/filters/tag/:tag", s.listFilters).Name = "filters-for-tag"
